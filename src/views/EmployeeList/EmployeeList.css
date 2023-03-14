@@ -1,0 +1,70 @@
+.p-datatable .p-datatable-thead > tr > th {
+    background-color: rgba(0, 0, 0, 0.1);
+    color: white;
+}
+.p-datatable .p-datatable-tbody > tr {
+    background-color: rgba(255,255,255,0.13);
+    color: white;
+}
+
+table {
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255,255,255,0.1);
+    box-shadow: 0 0 40px rgba(8,7,16,0.6);
+}
+
+.p-datatable .p-sortable-column .p-sortable-column-icon {
+    color: #e5e5e5;
+}
+
+.p-datatable .p-paginator-bottom {
+    margin-top: 20px;
+}
+
+.p-paginator {
+    /* background-color: rgba(0, 0, 0, 0.4); */
+    background-color: transparent;
+    /* justify-content: flex-end; */
+}
+
+.table-container {
+    background-color: rgba(16, 18, 27, 0.4);
+    /* background-color: rgba(0, 0, 0, 0.2); */
+    
+    border: 2px solid rgba(255,255,255,0.1);
+    box-shadow: 0 0 40px rgba(8,7,16,0.6);
+    border-radius: 10px;
+    padding: 35px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* background-image:-webkit-gradient(linear,250 500,left top,color-stop(0.50,transparent),color-stop(0.51,rgba(255,255,255,0.04)),color-stop(1,rgba(255,255,255,0.4))) */
+	background-image: linear-gradient(rgba(255, 255, 255, 0.050),rgba(255, 255, 255, 0.20) 60%,rgba(255, 255, 255, 0.02) 80%,rgba(255, 255, 255, 0.08));
+
+}
+
+.p-input-icon-left {
+    width: 60%;
+    margin-bottom: 20px;
+}
+
+.p-inputtext {
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    border: none;
+}
+
+
+
+
+.modal-content {
+    color: black !important;
+    min-height: 200px !important;
+    height: auto !important;
+}
+
+.modal-content h1 {
+    color: black !important;
+    text-align: center;
+}
