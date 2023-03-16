@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { loadData } from "../../services/LocalStorage"
 import { useSelector } from "react-redux"
 import { Link } from 'react-router-dom'
 import { DataTable } from 'primereact/datatable'
@@ -17,9 +18,10 @@ const EmployeeList = () => {
         global: { value: null, matchMode: FilterMatchMode.CONTAINS },
     })
 
-    const data = useSelector(state =>  state.employee)
-    console.log(data)
-    
+    const storagedEmployeesData = JSON.parse(loadData("employeesData"))
+    const employeesData = useSelector(state =>  state.employee)
+
+    const data = storagedEmployeesData ? storagedEmployeesData : employeesData;
 
     return (
         <>

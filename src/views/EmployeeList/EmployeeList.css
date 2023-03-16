@@ -3,7 +3,7 @@
     color: white;
 }
 .p-datatable .p-datatable-tbody > tr {
-    background-color: rgba(255,255,255,0.13);
+    background-color: rgba(255, 255, 255, 0.055);
     color: white;
 }
 
@@ -11,7 +11,7 @@ table {
     border-radius: 10px;
     backdrop-filter: blur(10px);
     border: 2px solid rgba(255,255,255,0.1);
-    box-shadow: 0 0 40px rgba(8,7,16,0.6);
+    box-shadow: 0 0 40px rgba(93, 79, 204, 0.6);
 }
 
 .p-datatable .p-sortable-column .p-sortable-column-icon {
@@ -29,7 +29,7 @@ table {
 }
 
 .table-container {
-    background-color: rgba(16, 18, 27, 0.4);
+    background-color: rgba(0, 0, 0, 0.233);
     /* background-color: rgba(0, 0, 0, 0.2); */
     
     border: 2px solid rgba(255,255,255,0.1);
@@ -39,8 +39,9 @@ table {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin: 50px 0;
     /* background-image:-webkit-gradient(linear,250 500,left top,color-stop(0.50,transparent),color-stop(0.51,rgba(255,255,255,0.04)),color-stop(1,rgba(255,255,255,0.4))) */
-	background-image: linear-gradient(rgba(255, 255, 255, 0.050),rgba(255, 255, 255, 0.20) 60%,rgba(255, 255, 255, 0.02) 80%,rgba(255, 255, 255, 0.08));
+	/* background-image: linear-gradient(rgba(255, 255, 255, 0.050),rgba(255, 255, 255, 0.20) 60%,rgba(255, 255, 255, 0.02) 80%,rgba(255, 255, 255, 0.08)); */
 
 }
 

@@ -1,18 +1,19 @@
 import { configureStore, createSlice } from "@reduxjs/toolkit"
+import { saveData } from "../src/services/LocalStorage"
 
 const employeeSlice = createSlice({
     name: "employee",
     initialState: [
         {
-            firstname: 'Olivier',
-            lastname: 'Oudot',
-            startDate: '02/01/2023',
+            firstname: 'Tony',
+            lastname: 'Stark',
+            birthDate: '05/29/1970',
+            startDate: '12/16/1991',
             department: 'Sales',
-            birthDate: '02/06/2023',
-            street: 'Rue des Pins',
-            city: 'Seloncourt',
-            state: 'FR',
-            zipCode: '25230'
+            street: 'Point Dume',
+            city: 'Malibu Point',
+            state: 'test',
+            zipCode: '10880'
         },
         {
             firstname: 'Hello',
@@ -52,8 +53,9 @@ const employeeSlice = createSlice({
                 zipCode: zipCode
             }
             currentState.push(newEmployee)
+            saveData("employeesData", JSON.stringify(currentState))
         },
-        deleteEmployee: (currentState, payload) => {}
+        deleteEmployee: (currentState, action) => {}
     }
 })
 

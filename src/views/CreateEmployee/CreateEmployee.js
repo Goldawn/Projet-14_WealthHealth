@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import {Modal} from '@goldawn/react-modal-component'
-import { Link, useNavigate } from 'react-router-dom'
-import { useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom'
+import { useDispatch, useSelector } from 'react-redux';
 import { Dropdown } from 'primereact/dropdown';
 import { Calendar } from 'primereact/calendar';
 import { InputText } from 'primereact/inputtext';
@@ -13,13 +13,7 @@ import "./CreateEmployee.css";
 const CreateEmployee = () => {
 
     const [isOpen, setIsOpen] = useState(false)
-    const navigate = useNavigate();
     const dispatch = useDispatch();
-
-    const handleOpen = (e) => {
-        e.preventDefault();
-        setIsOpen(true)
-    }
 
     const handleClose = () => setIsOpen(false)
     
@@ -49,19 +43,29 @@ const CreateEmployee = () => {
           [e.target.name]: e.target.value
         })
         )
-      }
+    }
+
+    const formatData = (employeeData) => {
+        const { birthDate, startDate, department, state } = employeeData
+        // we need to format dates MM/DD/YYYY
+        // console.log(employeeData.birthDate.toLocaleDateString('en-US', { month: '2-digit'}))
+        const formattedBirthDate = ((birthDate.getMonth() > 8) ? (birthDate.getMonth() + 1) : ('0' + (birthDate.getMonth() + 1))) + '/' + ((birthDate.getDate() > 9) ? birthDate.getDate() : ('0' + birthDate.getDate())) + '/' + birthDate.getFullYear();
+        const formattedStartDate = ((startDate.getMonth() > 8) ? (startDate.getMonth() + 1) : ('0' + (startDate.getMonth() + 1))) + '/' + ((startDate.getDate() > 9) ? startDate.getDate() : ('0' + startDate.getDate())) + '/' + startDate.getFullYear();
+
+        return {
+            ...employeeData,
+           birthDate: formattedBirthDate,
+           startDate: formattedStartDate,
+           department: department.name,
+           state: state.name
+        }
+    }
 
     const  submitHandler = e => {
-    e.preventDefault()
-    console.log(employeeData)
-    setIsOpen(true)
-    employeeData.birthDate = employeeData.birthDate.toString();
-    employeeData.startDate = employeeData.startDate.toString();
-    employeeData.department = employeeData.department.name;
-    employeeData.state = employeeData.state.name;
-    dispatch({ type: "employee/addEmployee", payload: employeeData})
-    // saveData('token', fetchedData.body.token)
-    // navigate('/employee-list');
+        e.preventDefault()
+        // setIsOpen(true)
+        const formattedData = formatData(employeeData)
+        dispatch({ type: "employee/addEmployee", payload: formattedData})
     }
     
 
@@ -122,15 +126,6 @@ const CreateEmployee = () => {
             {/* <button onClick={handleOpen}>Open Modal</button> */}
             <Modal isOpen={isOpen} handleClose={handleClose} allowEscape>
                 <h1>Employee Created !</h1>
-                <p>firstname: {employeeData.firstname}</p>
-                <p>lastname: {employeeData.lastname}</p>
-                <p>startDate: {employeeData.startDate}</p>
-                <p>department: {employeeData.department}</p>
-                <p>birthDate: {employeeData.birthDate}</p>
-                <p>street: {employeeData.street}</p>
-                <p>city: {employeeData.city}</p>
-                <p>state: {employeeData.state}</p>
-                <p>zipCode: {employeeData.zipCode}</p>
             </Modal>
       </>
     );
