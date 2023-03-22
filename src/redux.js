@@ -1,9 +1,10 @@
 import { configureStore, createSlice } from "@reduxjs/toolkit"
-import { saveData } from "../src/services/LocalStorage"
+import { saveData, loadData } from "../src/services/LocalStorage"
 
+const savedEmployeesFromLocalStorage = JSON.parse(loadData("employeesData"))
 const employeeSlice = createSlice({
     name: "employee",
-    initialState: [
+    initialState: savedEmployeesFromLocalStorage ? savedEmployeesFromLocalStorage : [
         {
             firstname: 'Tony',
             lastname: 'Stark',
