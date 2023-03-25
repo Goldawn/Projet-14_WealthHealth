@@ -4,6 +4,7 @@ import { Provider } from "react-redux"
 import { store } from "./redux"
 import CreateEmployee from './views/CreateEmployee/CreateEmployee'
 import EmployeeList from './views/EmployeeList/EmployeeList'
+import Header from './components/Header'
 
 import './App.css';
 
@@ -13,6 +14,7 @@ function App() {
   return (
     <div className="App">
       <Provider store={store}>
+        <Header />
         <Routes>
             <Route path="/" element={<CreateEmployee />} />
             <Route path="/employee-list" element={<EmployeeList />} />

@@ -1,22 +1,16 @@
-h1, a {
-  margin-bottom: 10px;
-}
 
 h1, a{
   color: #000000;
+  margin: 0;
 }
 
- h2 {
-  color: #fff;
-}
-
-img {
-  max-width: 150px;
+h2 {
+  color: #93AD18;
 }
 
 form {
   text-align: center;
-  background-color: #93AD18;
+  background-color: rgb(255, 255, 255);
   top: 50%;
   left: 50%;
   border-radius: 10px;
@@ -24,7 +18,7 @@ form {
   border: 2px solid rgba(255,255,255,0.1);
   box-shadow: 0 0 40px rgba(8,7,16,0.6);
   padding: 40px 35px;
-  background-image:-webkit-gradient(linear,250 500,left top,color-stop(0.50,transparent),color-stop(0.51,rgba(255,255,255,0.04)),color-stop(1,rgba(255,255,255,0.4)))
+  margin: 50px 0;
 }
 
 form *:not(.p-dropdown *) {
@@ -33,6 +27,11 @@ form *:not(.p-dropdown *) {
   font-family: 'Poppins',sans-serif;
   letter-spacing: 0.5px;
 }
+
+.p-dropdown:not(.p-disabled) .p-focus {
+  box-shadow: 0 0 0 0.2rem rgb(148 173 24 / 50%) !important;
+}
+
 
 form .form-column {
   display: flex;
@@ -51,11 +50,11 @@ form > div {
 label {
   font-weight: 500;
   text-align: left;
-  color: #fff;
+  color: #000;
 }
 
 form input.p-inputtext, form .p-dropdown {
-  background-color: #fff;
+  background-color: rgba(148, 173, 24, 0.15);
   border-radius: 3px;
   font-size: 14px;
   font-weight: 300;
@@ -70,7 +69,7 @@ span.p-inputtext, #create-employee-form .p-dropdown-trigger {
 }
 
 button.p-button {
-  background-color: #fff;
+  background-color: #93AD18;
   padding: 15px 0;
   font-size: 18px;
   font-weight: 600;
@@ -88,26 +87,12 @@ button.p-button:hover {
 }
 
 button .p-button-label {
-  color: #000000;
-}
-
-button:hover .p-button-label {
   color: #fff;
-}
-
-.modal {
-  position: absolute;
-}
-
-.modal button {
-  position: absolute;
-  top: 0;
-  right: 0;
 }
 
 .adress {
   margin-top: 50px;
-  border: 1px solid #ffffff;
+  border: 1px solid #000;
   border-radius: 10px;
   position: relative;
 }
@@ -120,7 +105,41 @@ button:hover .p-button-label {
   top: 0;
   padding: 5px;
   transform: translateY(-55%);
-  color: #fff;
-  background-color: #93AD18;
+  color: #000;
+  background-color: #ffffff;
   z-index: 2;
+}
+
+.modal {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-content {
+  color: white;
+  background-color: #93AD18;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 130px;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  
+}
+
+.modal-content a {
+  color: #000
+}
+
+.modal button {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.modal p {
+  font-weight: 500;
+  font-size: 20px;
 }

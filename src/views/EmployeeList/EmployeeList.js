@@ -21,7 +21,6 @@ const EmployeeList = () => {
 
     return (
         <>
-            <h1>Employee List</h1>
             <div className="table-container">
 
             <span className="p-input-icon-left">
@@ -52,7 +51,6 @@ const EmployeeList = () => {
                     <Column field="zipCode" header="Zip Code" sortable />
                 </DataTable>
             </div>
-            <Link to="/">Home</Link>
         </>
     );
 }
