@@ -1,7 +1,15 @@
 import { configureStore, createSlice } from "@reduxjs/toolkit"
 import { saveData, loadData } from "../src/services/LocalStorage"
 
-const savedEmployeesFromLocalStorage = JSON.parse(loadData("employeesData"))
+const localStorage =loadData("employeesData")
+let savedEmployeesFromLocalStorage
+
+if(localStorage) {
+    savedEmployeesFromLocalStorage = JSON.parse(loadData("employeesData"))
+    console.log(savedEmployeesFromLocalStorage)
+}
+else savedEmployeesFromLocalStorage = null;
+
 const employeeSlice = createSlice({
     name: "employee",
     initialState: savedEmployeesFromLocalStorage ? savedEmployeesFromLocalStorage : [

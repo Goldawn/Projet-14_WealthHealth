@@ -135,8 +135,9 @@ button .p-button-label {
 
 .modal button {
   position: absolute;
-  top: 0;
-  right: 0;
+  top: 50%;
+  right: 50%;
+  transform: translateX(50%) translateX(110px) translateY(-50%) translateY(-50px);
 }
 
 .modal p {
